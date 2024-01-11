@@ -5,5 +5,5 @@ import com.quintallabs.repository.respositories.DrinkRepository
 import org.koin.dsl.module
 
 val drinkRepositoryModule = module{
-  factory<IDrinkRepository> { DrinkRepository(get(), get()) }
+  factory<IDrinkRepository> { DrinkRepository(get(), get(), get()) }
 }

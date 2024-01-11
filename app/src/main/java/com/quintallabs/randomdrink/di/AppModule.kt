@@ -1,6 +1,7 @@
 package com.quintallabs.randomdrink.di
 
 import com.quintallabs.common.baseapp.di.modules.ModuleInitialization
+import com.quintallabs.common.di.database.drinkDatabaseModule
 import com.quintallabs.common.di.network.api.common.commonApiModule
 import com.quintallabs.common.di.network.api.drinkApiModule
 import com.quintallabs.common.di.network.networkModule
@@ -30,7 +31,8 @@ class AppModule : ModuleInitialization() {
     return listOf(
       drinkUseCaseModule,
       drinkRepositoryModule,
-      drinkApiModule
+      drinkApiModule,
+      drinkDatabaseModule
     )
   }
 

@@ -51,5 +51,7 @@ dependencies {
   implementation(project(":common:baseapp"))
   implementation(project(":common:di"))
   implementation(project(":feature:home"))
+  implementation(project(":feature:favorites"))
   implementation(project(":feature:search"))
+  implementation(project(":design:components"))
 }

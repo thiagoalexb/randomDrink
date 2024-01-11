@@ -11,6 +11,6 @@ class GetRandomDrinkUseCase (
 ) {
 
   operator fun invoke(): Flow<Result<Drink, GeneralError>> =
-    drinkRepository.getRandomDrink()
+    drinkRepository.getRandom()
 
 }

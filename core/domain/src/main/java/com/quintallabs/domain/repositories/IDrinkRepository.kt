@@ -7,7 +7,13 @@ import kotlinx.coroutines.flow.Flow
 
 interface IDrinkRepository {
 
-  fun getRandomDrink(): Flow<Result<Drink, GeneralError>>
+  fun getRandom(): Flow<Result<Drink, GeneralError>>
 
-  fun searchDrink(query: String): Flow<Result<List<Drink>, GeneralError>>
+  fun search(query: String): Flow<Result<List<Drink>, GeneralError>>
+
+  fun saveFavoritesDrinks(drinks: MutableList<Drink>)
+
+  fun getFavorites(): MutableList<Drink>?
+
+  fun getById(id: String): Flow<Result<Drink, GeneralError>>
 }

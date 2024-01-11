@@ -1,17 +1,19 @@
 package com.quintallabs.design.components
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
-fun DrinkTitle(title: String) {
+fun DrinkTitle(title: String, modifier: Modifier = Modifier) {
   Text(
-    modifier = Modifier.fillMaxWidth(),
     text = title,
     style = MaterialTheme.typography.headlineMedium,
-    color = MaterialTheme.colorScheme.onPrimary
+    color = MaterialTheme.colorScheme.onPrimary,
+    overflow = TextOverflow.Ellipsis,
+    maxLines = 1,
+    modifier = modifier
   )
 }

@@ -11,6 +11,6 @@ class SearchDrinkUseCase (
 ) {
 
   suspend operator fun invoke(query: String): Flow<Result<List<Drink>, GeneralError>> =
-    drinkRepository.searchDrink(query)
+    drinkRepository.search(query)
 
 }

@@ -2,6 +2,7 @@ package com.quintallabs.randomdrink
 
 import android.app.Application
 import com.quintallabs.common.baseapp.di.modules.ModuleInitializer
+import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,6 +15,7 @@ class RandomDrinkApplication : Application() {
 
   private fun initApplication() {
     startKoin()
+    startPaperDb()
   }
 
   private fun startKoin() {
@@ -23,5 +25,9 @@ class RandomDrinkApplication : Application() {
         ModuleInitializer.modules
       )
     }
+  }
+
+  private fun startPaperDb() {
+    Paper.init(this)
   }
 }

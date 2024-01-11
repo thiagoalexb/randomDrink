@@ -38,4 +38,5 @@ android {
 dependencies {
   implementation(project(":common:baseapp"))
   implementation(project(":core:domain"))
+  implementation(project(":design:components"))
 }

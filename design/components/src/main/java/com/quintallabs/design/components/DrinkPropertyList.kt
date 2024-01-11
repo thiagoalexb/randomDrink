@@ -1,5 +1,7 @@
 package com.quintallabs.design.components
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -16,32 +18,30 @@ fun DrinkPropertyList(
   sectionTitle: String,
   properties: List<Pair<String, String>>,
 ) {
-  LazyColumn(
-    modifier = Modifier
-      .fillMaxWidth()
-      .height(180.dp)
-      .padding(top = 16.dp)
-  ) {
-    item {
+  Column {
+    Text(
+      modifier = Modifier
+        .padding(bottom = 12.dp),
+      text = sectionTitle,
+      style = MaterialTheme.typography.titleLarge,
+      color = MaterialTheme.colorScheme.onPrimary
+    )
+
+    for(property in properties) {
+
+      var text = property.first
+      text += if(property.second.isNotBlank())
+        " - ${property.second}"
+      else
+        ""
+
       Text(
         modifier = Modifier
-          .padding(bottom = 8.dp),
-        text = sectionTitle,
-        style = MaterialTheme.typography.titleLarge,
+          .padding(start = 12.dp, bottom = 12.dp),
+        text = text,
+        style = MaterialTheme.typography.titleSmall,
         color = MaterialTheme.colorScheme.onPrimary
       )
     }
-    items(
-      items = properties,
-      itemContent = {
-        Text(
-          modifier = Modifier
-            .padding(start = 12.dp, bottom = 12.dp),
-          text = "${it.first} - ${it.second}",
-          style = MaterialTheme.typography.titleSmall,
-          color = MaterialTheme.colorScheme.onPrimary
-        )
-      }
-    )
   }
 }
