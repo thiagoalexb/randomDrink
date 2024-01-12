@@ -54,4 +54,5 @@ dependencies {
   implementation(project(":feature:favorites"))
   implementation(project(":feature:search"))
   implementation(project(":design:components"))
+  implementation(project(":design:drawables"))
 }
